@@ -1,0 +1,2 @@
+# Setup Py Venv
+source ./venv/bin/activate
