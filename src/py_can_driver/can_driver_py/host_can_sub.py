@@ -5,6 +5,9 @@ from rclpy.node import Node
 # Import Generic CAN Message 
 from can_msg.msg import GenericCAN
 
+# TODO:
+# Package name change xml file need to be changed as well
+
 
 class CAN_Message_Parser(Node):
     
