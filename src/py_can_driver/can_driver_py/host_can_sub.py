@@ -1,10 +1,9 @@
-#import ROS related packages
+# Import ROS Related Packages
 import rclpy
 from rclpy.node import Node
 
-#import std_message for transport
-# TODO:Customize CAN message Data field 
-from can_msg.msg import OdriveCAN
+# Import Generic CAN Message 
+from can_msg.msg import GenericCAN
 
 
 class CAN_Message_Parser(Node):
@@ -13,7 +12,7 @@ class CAN_Message_Parser(Node):
         super().__init__('can_message_parser')
         print("CAN Gateway started")
         self.subscription = self.create_subscription(
-            OdriveCAN,
+            GenericCAN,
             'topic',
             self.listener_callback,
             10 )
