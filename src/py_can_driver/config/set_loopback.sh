@@ -7,29 +7,33 @@
 
 VERSION=0.0.1
 SUBJECT=ENABLE_LOOPBACK
-USAGE="Usage: command -ihv args"
+USAGE="Usage: bash set_loopback.sh  [-r default:500000] [-i default:can0] [-v] [-h]"
 
 # --- Options processing -------------------------------------------
 if [ $# == 0 ] ; then
+    echo "This program requires root previleges"
     echo $USAGE
     exit 1;
 fi
 
-while getopts ":i:vh" optname
+while getopts ":r:i:vh" optname
   do
     case "$optname" in
       "v")
         echo "Version $VERSION"
         exit 0;
         ;;
-      "i")
-        echo "-i argument: $OPTARG"
+      "r")
+	RATE=$OPTARG
         ;;
+      "i")
+        CAN=$OPTARG
+	;;
       "h")
         echo $USAGE
         exit 0;
         ;;
-      "?")
+	      "?")
         echo "Unknown option $OPTARG"
         exit 0;
         ;;
@@ -46,12 +50,11 @@ while getopts ":i:vh" optname
 
 shift $(($OPTIND - 1))
 
-param1=$1
-param2=$2
-
 # --- Body --------------------------------------------------------
 #  SCRIPT LOGIC GOES HERE
-echo $param1
-echo $param2
+if ["$RATE"="100000"] && ["$RATE"="125000"] && ["$RATE"="250000"] && ["$RATE"="500000"] && ["$RATE"="1000000"]; then
+    RATE=500000
+    echo $RATE
+fi
 # -----------------------------------------------------------------
  
