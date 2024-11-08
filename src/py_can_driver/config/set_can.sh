@@ -1,12 +1,12 @@
 #!/bin/bash
 # ------------------------------------------------------------------
-# [y29lin] Jetson CAN interface loopback configure
-#         setup the CAN loopback interface
+# [y29lin] Jetson CAN interface configure
+#         setup the CAN interface
 # .sh Template: https://github.com/RenatGilmanov/shell-script-template
 # ------------------------------------------------------------------
 
 VERSION=0.0.1
-SUBJECT=ENABLE_LOOPBACK
+SUBJECT=ENABLE_CAN
 USAGE="Usage: bash set_loopback.sh  [-r default:500000] [-i default:can0] [-v] [-h]"
 
 RATE=0
@@ -32,12 +32,12 @@ while getopts ":r:i:vh" optname
         echo $USAGE
         exit 0;
         ;;
-	      "?")
+      "?")
         echo "Unknown option $OPTARG"
         exit 0;
         ;;
       ":")
-        echo "No argument value for option $OPTARG"
+	echo "No argument value for option $OPTARG"
         exit 0;
         ;;
       *)
@@ -70,7 +70,7 @@ fi
 echo "CONFIG: Interface $CAN transmission rate $RATE"
 
 sudo ip link set $CAN down
-sudo ip link set $CAN type can bitrate $RATE loopback on
+sudo ip link set $CAN type can bitrate $RATE on
 sudo ip link set $CAN up
 candump $CAN &
 cansend $CAN 123#abcdabcd
