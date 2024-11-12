@@ -2,7 +2,8 @@
 import can
 import yaml 
 
-
+# TODO:
+# Impl singleton for all the can interface and each have an attribute
 class CanInstance:
     def __init__(self):
         # Check platform, read yml whitelist config
