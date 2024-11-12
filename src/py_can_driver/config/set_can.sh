@@ -69,9 +69,9 @@ fi
 
 echo "CONFIG: Interface $CAN transmission rate $RATE"
 
-sudo ip link set $CAN down
-sudo ip link set $CAN type can bitrate $RATE on
-sudo ip link set $CAN up
+ip link set $CAN down
+ip link set $CAN type can bitrate $RATE
+ip link set $CAN up
 candump $CAN &
 # -----------------------------------------------------------------
  
