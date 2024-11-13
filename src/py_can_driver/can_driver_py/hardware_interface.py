@@ -9,12 +9,19 @@ class CanInstance:
         # Check platform, read yml whitelist config
         # Try expect and enable the interface
         # self.can_bus = can.interface.Bus(bustype='slcan', channel='/dev/ttyACM0', bitrate=500000)
-        pass
+        self.read_config()
+        self.get_device()
     
     def read_config(self):
         with open('config/interface.yaml', 'r') as file:
-            devices = yaml.safe_load(file)
-            print(devices)
+            self.devices = yaml.safe_load(file)
+        
+    def get_device(self):
+        try:
+            self.devices = self.devices["devices"]
+        except KeyError:
+            print("No valid CAN interface registered")
+
 
 
 
