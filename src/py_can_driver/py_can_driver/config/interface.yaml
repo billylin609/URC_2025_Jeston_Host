@@ -1,0 +1,5 @@
+---
+device:
+    can0:
+        bustype: slcan
+        bitrate: 500000
