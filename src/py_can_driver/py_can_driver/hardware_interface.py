@@ -1,6 +1,6 @@
 # Import python Packages
 import os
-
+from enum import Enum
 try:
   import can
 except ImportError:
@@ -10,28 +10,36 @@ import can
 try:
   import yaml
 except ImportError:
-  print "Trying to Install requiredmodule: pyyaml\n"
+  print "Trying to Install required module: requests pyyaml\n"
   os.system('python3 -m pip install pyyaml')
 import yaml 
-
 
 # TODO:
 # Proper documentation
 
+class std_ReturnType(Enum):
+    E_NOT_OK = 0
+    E_OK = 1
+
 # This is Parent class(for all the new can device)
 class CanInstance:
     _instance = None
+    _status = std_ReturnType.E_NOT_OK
 
-    def __new__(cls, arg1, arg2):
+    def __new__(cls, interface, channel, bitrate):
         if cls._instance is None:
             cls._instance = super(CanInstance, cls).__new__(cls)
             try:
-                self.can_bus = can.interface.Bus(interface='slcan', channel='/dev/ttyACM0', bitrate=500000)
+                # Var
+                self.can_bus = can.interface.Bus(interface=interface, channel=channel, bitrate=bitrate)
+                _status = std_ReturnType.E_OK
             # Find runtime error
             except:
-                #interface not init properly
-                pass
+                print("CAN Interface not available.")
+                _status = std_ReturnType.E_NOT_OK
 
+    def get_status(self):
+        return self._status
 
 
 
@@ -65,6 +73,7 @@ class FindDevice:
         
 
 def main(args=None):
+
 
 if __name__ == '__main__':
     main()
