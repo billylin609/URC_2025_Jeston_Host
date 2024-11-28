@@ -69,6 +69,16 @@ class FindDevice:
             print("No valid CAN interface registered")
         for device in self.devices:
             print(device)
+            try: 
+                bitrate = int(device[bitrate])
+                _insatnce.append({device: CanInterface(device[interface], device[channel], device[bitrate])#try 
+            except ValueError:
+                print("None int")
+                
+            _insatnce.append(device
+            print(device[interface])
+            print(device[channel])
+            print(device[bitrate])
 
         
 

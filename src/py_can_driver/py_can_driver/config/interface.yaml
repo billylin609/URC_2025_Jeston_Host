@@ -1,5 +1,6 @@
 ---
 device:
     can0:
-        bustype: slcan
+        interface: slcan
+        channel: can0
         bitrate: 500000
