@@ -1,0 +1,3 @@
+[submodule "src/odrive_wrapper/nanodbc"]
+	path = src/odrive_wrapper/nanodbc
+	url = https://github.com/nanodbc/nanodbc.git
