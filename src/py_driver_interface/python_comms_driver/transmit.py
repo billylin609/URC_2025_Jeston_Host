@@ -3,7 +3,6 @@
 # abstrat class for all the communication
 
 import can
-
 class transmit:
 
 class Can_Transmit {

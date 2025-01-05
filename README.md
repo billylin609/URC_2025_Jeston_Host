@@ -3,8 +3,10 @@ This is the project for URC 2025 season code for the jetson host.
 
 This project will only contains codes that is linked with hardware.
 
-# TODO:
-# create a proper README file
+# TODO(Questions):
+- create a proper README file
+- renaming this project and reconsider how to structure this?
+- Do we need to have multiple version of ros available?
 
 Folder structure:
 config for setup can interface
