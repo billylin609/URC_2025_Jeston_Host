@@ -2,6 +2,8 @@
 
 #include <stdint.h>
 #include <iterator>
+#include <algorithm>
+#include <bit>
 
 class Msg {
 		/*complete this class*/
@@ -24,7 +26,7 @@ class CanMessage: Msg {
 				// endian conversion
 				// impl begin and end method
 				// use std::reverse()
-				// cpp representation IEEE 754 and value
+				// cpp representation IEEE 754 and value (memcpy or try std::bit_cast) [c++20]
 }
 
 #endif //CAN_WRAPPER
