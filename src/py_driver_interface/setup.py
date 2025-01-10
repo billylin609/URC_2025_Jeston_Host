@@ -20,7 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'listener = can_driver_py.host_can_sub: main',
         ],
     },
 )

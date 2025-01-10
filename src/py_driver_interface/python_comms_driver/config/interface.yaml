@@ -1,0 +1,6 @@
+---
+device:
+    can0:
+        interface: slcan
+        channel: can0
+        bitrate: 500000
