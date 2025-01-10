@@ -13,3 +13,21 @@ config for setup can interface
 
 Note:
 if enable loopback mode need to reboot before able to properly using can interface
+=======
+In Devel branch please branch your feature under name devel/feature_name
+
+
+# TODO:
+# - Update README.md file
+
+to build this project using colcon
+
+> colcon build
+
+# TODO:
+Create a shell script
+> source ./venv/bin/Activate
+> project dependent build
+
+VENV contain all the python dependencies
+
