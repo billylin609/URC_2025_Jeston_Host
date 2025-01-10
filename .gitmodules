@@ -1,0 +1,6 @@
+[submodule "src/odrive_wrapper/nanodbc"]
+	path = src/odrive_wrapper/nanodbc
+	url = https://github.com/nanodbc/nanodbc.git
+[submodule "src/Motor-Controller"]
+	path = src/Motor-Controller
+	url = https://github.com/bluebarryz/Motor-Controller.git
