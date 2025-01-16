@@ -31,3 +31,9 @@ Create a shell script
 
 VENV contain all the python dependencies
 
+# Not setting up ROS bridge between two computer:
+- setup LAN connection between two device
+- controller over LAN[https://www.virtualhere.com/]
+- video streaming
+- https://www.geeksforgeeks.org/soft-real-time-communication-in-lan/?ref=ml_lbp
+- https://www.geeksforgeeks.org/data-communication-tutorial/?ref=ml_lbp
