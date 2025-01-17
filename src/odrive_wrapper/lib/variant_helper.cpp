@@ -10,6 +10,10 @@ typedef struct {
 } bool_t;
 
 namespace PayloadVariant {
+  // Todo:
+  // 1. bad impl -> see similiar impl https://stackoverflow.com/questions/36717725/c-same-variable-act-as-int-and-float
+  // Note: int sizing using a variable
+  // 2. variant and index?
   union MsgPayload {
     bool_t _b;
     uint8_t _us;
